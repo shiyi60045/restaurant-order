@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: restaurant-order
+
+  # H2数据库配置（内存数据库，适合开发和测试）
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+
+  # JPA配置
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # H2控制台（开发时方便查看数据库）
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# 日志配置
+logging:
+  level:
+    com.restaurant: DEBUG
